@@ -165,7 +165,6 @@ Vagrant.configure("2") do |config|
       mkdir -p /root/.chef/{cookbooks,data_bags}
       
       mv /home/vagrant/knife.rb /root/.chef
-      mv /home/vagrant/hello /root/.chef/cookbooks
 
       scp -o StrictHostKeyChecking=no -i /home/vagrant/.ssh/chef_env_rsa vagrant@chef-server:/etc/chef/knife_admin_key.tar.gz /home/vagrant
       mv /home/vagrant/knife_admin_key.tar.gz /root/.chef
@@ -181,7 +180,7 @@ Vagrant.configure("2") do |config|
       knife vault show secret_vault mysql_pw
       
       # Move hello cookbook into place
-      mv /home/vagrant/hello ./cookbooks
+      mv /home/vagrant/hello /root/.chef/cookbooks
       # Upload hello cookbook to chef server
       knife upload cookbooks
       cd /root/.chef/cookbooks

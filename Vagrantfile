@@ -66,10 +66,6 @@ Vagrant.configure("2") do |config|
       sed -ri 's/^#?PasswordAuthentication\s+.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
       sed -ri 's/UsePAM\syes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-      # TESTING (try commenting these lines out - bootstrapping should provision these):
-      wget https://packages.chef.io/files/stable/chef/14.10.9/ubuntu/18.04/chef_14.10.9-1_amd64.deb
-      dpkg -i chef_14.10.9-1_amd64.deb
-
       # Restart ssh to accomodate password auth
       echo "Restarting ssh service on chef-agent-1"
       service sshd restart
@@ -93,10 +89,6 @@ Vagrant.configure("2") do |config|
       sed -ri 's/^#?PasswordAuthentication\s+.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
       sed -ri 's/UsePAM\syes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-      # TESTING (try commenting these lines out - bootstrapping should provision these):
-      wget https://packages.chef.io/files/stable/chef/14.10.9/ubuntu/18.04/chef_14.10.9-1_amd64.deb
-      dpkg -i chef_14.10.9-1_amd64.deb
-
       # Restart ssh to accomodate password auth
       echo "Restarting ssh service on chef-agent-2"
       service sshd restart
@@ -119,10 +111,6 @@ Vagrant.configure("2") do |config|
       # Modify sshd to accomodate password auth
       sed -ri 's/^#?PasswordAuthentication\s+.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
       sed -ri 's/UsePAM\syes/#UsePAM yes/g' /etc/ssh/sshd_config
-
-      # TESTING (try commenting these lines out - bootstrapping should provision these):
-      wget https://packages.chef.io/files/stable/chef/14.10.9/ubuntu/18.04/chef_14.10.9-1_amd64.deb
-      dpkg -i chef_14.10.9-1_amd64.deb
 
       # Restart ssh to accomodate password auth
       echo "Restarting ssh service on chef-agent-3"

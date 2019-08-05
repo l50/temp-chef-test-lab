@@ -1,7 +1,7 @@
 # chef-test-lab
 Create test lab which can be used to play around with MOSE and Chef.
 
-**Warning, take heed: This lab should be run in a controlled environment, as it contains vulnerable assets.
+**Warning, take heed: This lab should be run in a controlled environment, as it contains vulnerable assets.**
 
 ## Dependencies
 You must download and install the following for this environment to work:

